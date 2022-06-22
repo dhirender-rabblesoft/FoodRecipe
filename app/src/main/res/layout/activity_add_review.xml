@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainconatner"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/_20sdp"
+    android:paddingEnd="@dimen/_20sdp"
+    android:paddingBottom="@dimen/_20sdp"
+    tools:context=".screens.AddReviewActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/common_toolbar" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReviewTitle"
+        style="@style/semibold_font"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:text="Review That's Help Others"
+        android:textSize="@dimen/_26sdp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/namelayout"
+        style="@style/materialStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:hint="Enter Your Name"
+        android:textColorHint="@color/black_1"
+        android:visibility="gone"
+        app:boxStrokeWidthFocused="@dimen/_1sdp"
+        app:errorIconTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewTitle"
+        app:layout_goneMarginEnd="@dimen/_32sdp"
+        app:layout_goneMarginStart="@dimen/_32sdp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etname"
+            style="@style/edittextlogintitle"
+            android:drawablePadding="@dimen/_10sdp"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textarealayout"
+        style="@style/materialStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/namelayout"
+        app:layout_goneMarginEnd="@dimen/_32sdp"
+        app:layout_goneMarginStart="@dimen/_32sdp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/ettextarea"
+            style="@style/edittextlogintitle"
+            android:layout_height="@dimen/_120sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:gravity="start"
+            android:hint="Enter Your Review"
+            android:singleLine="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/userRating"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="4.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textarealayout" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvratingcount"
+        style="@style/semibold_font"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:singleLine="true"
+        android:text="4.5"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/userRating"
+        app:layout_constraintStart_toEndOf="@+id/userRating"
+        app:layout_constraintTop_toTopOf="@+id/userRating" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginbutton"
+        style="@style/mainbutton"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Add Review"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userRating" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

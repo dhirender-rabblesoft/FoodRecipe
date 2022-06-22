@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:padding="@dimen/_20sdp">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fbCloseSideMenu"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/ic_back_button"
+        android:backgroundTint="@color/main_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/ivuserimg"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:src="@drawable/user_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="@dimen/_10sdp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvusersubtile"
+        style="@style/medium_font"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_10sdp"
+        android:text="Beginner"
+        android:textColor="@color/black_1"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toStartOf="@+id/fbCloseSideMenu"
+        app:layout_constraintStart_toEndOf="@+id/ivuserimg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvusername"
+        style="@style/bold_font"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_10sdp"
+        android:text="Ani Averngers"
+        android:textColor="@color/black_1"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintEnd_toStartOf="@+id/fbCloseSideMenu"
+        app:layout_constraintStart_toEndOf="@+id/ivuserimg"
+        app:layout_constraintTop_toBottomOf="@+id/tvusersubtile" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@color/black_3"
+        app:layout_constraintTop_toBottomOf="@+id/ivuserimg" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvsidehome"
+            style="@style/semibold_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:drawableStart="@drawable/ic_baseline_home_24"
+            android:drawablePadding="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Home"
+            android:textColor="@color/black_1"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvsidetipstrick"
+            style="@style/semibold_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_baseline_lightbulb_24"
+            android:drawablePadding="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Tips Trick"
+            android:textColor="@color/black_1"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvsidehome" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvsidefavourite"
+            style="@style/semibold_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_baseline_favorite2"
+            android:drawablePadding="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Favourite"
+            android:textColor="@color/black_1"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvsidetipstrick" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvsidemyrecipe"
+            style="@style/semibold_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableStart="@drawable/side_cooking_icon_img_holder"
+            android:drawableTint="@color/card_black"
+            android:drawablePadding="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="My Recipe's"
+            android:textColor="@color/black_1"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvsidetipstrick" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvsidemyTips"
+            style="@style/semibold_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_baseline_lightbulb_24"
+            android:drawablePadding="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="My Tips"
+            android:textColor="@color/black_1"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvsidetipstrick" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvsideProfile"
+            style="@style/semibold_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawablePadding="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Profile"
+            android:textColor="@color/black_1"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvsidetipstrick" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvsideSetting"
+            style="@style/semibold_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_baseline_settings_24"
+            android:drawablePadding="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Setting"
+            android:textColor="@color/black_1"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvsidefavourite" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvsideContactus"
+            style="@style/semibold_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_baseline_contact_support_24"
+            android:drawablePadding="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Contact Us"
+            android:textColor="@color/black_1"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvsideSetting" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvsideAboutUs"
+            style="@style/semibold_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_baseline_info_24"
+            android:drawablePadding="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="About Us"
+            android:textColor="@color/black_1"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvsideContactus" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/view7"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@color/white_grey"
+        app:layout_constraintBottom_toTopOf="@+id/lllogoutcontainer" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/lllogoutcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/side_iv_logout"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/logout" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvside_logout"
+            style="@style/semibold_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_10sdp"
+            android:text="Logout"
+            android:textSize="@dimen/_12sdp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

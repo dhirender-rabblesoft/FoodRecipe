@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/_20sdp"
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingEnd="@dimen/_20sdp"
+    android:paddingBottom="@dimen/_20sdp"
+    tools:context=".screens.CreateRecipeActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/common_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/createRecipeButton"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/foodimage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/card_black2"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/createMyRecipebutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/ic_baseline_photo_camera_24"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:text="Add Food Images"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvImageclick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/foodimage"
+                tools:listitem="@layout/item_recipe_img_click" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/namelayout"
+                style="@style/materialStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="Recipe Name"
+                android:textColorHint="@color/black_1"
+                app:boxStrokeWidthFocused="@dimen/_1sdp"
+                app:errorIconTint="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/rvImageclick"
+                app:layout_goneMarginEnd="@dimen/_32sdp"
+                app:layout_goneMarginStart="@dimen/_32sdp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etname"
+                    style="@style/edittextlogintitle"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/timelayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Time"
+                app:hintEnabled="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/namelayout">
+
+                <!-- Inside text input layout add
+                      an auto complete text view
+                        and make its input type to none-->
+                <AutoCompleteTextView
+                    android:id="@+id/ettime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                    android:text="Choose " />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/videolinklayout"
+                style="@style/materialStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="Video Link "
+                android:textColorHint="@color/black_1"
+                app:boxStrokeWidthFocused="@dimen/_1sdp"
+                app:errorIconTint="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/timelayout"
+                app:layout_goneMarginEnd="@dimen/_32sdp"
+                app:layout_goneMarginStart="@dimen/_32sdp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etvideolink"
+                    style="@style/edittextlogintitle"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ingreadientlayout"
+                style="@style/materialStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="Add Ingredient "
+                android:textColorHint="@color/black_1"
+                app:boxStrokeWidthFocused="@dimen/_1sdp"
+                app:errorIconTint="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/videolinklayout"
+                app:layout_goneMarginEnd="@dimen/_32sdp"
+                app:layout_goneMarginStart="@dimen/_32sdp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etingredient"
+                    style="@style/edittextlogintitle"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llIngredientContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ingreadientlayout">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ingredientnamelayout"
+                    style="@style/materialStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="true"
+                    android:hint="Ingredient Quantity"
+                    android:padding="@dimen/_2sdp"
+                    app:hintEnabled="true">
+                    <!-- Inside text input layout add
+                          an auto complete text view
+                            and make its input type to none-->
+                    <AutoCompleteTextView
+                        android:id="@+id/etingredientname"
+                        style="@style/edittextlogintitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Ingredient's " />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/measurelayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Measurement"
+                    android:padding="@dimen/_2sdp"
+                    app:hintEnabled="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/namelayout">
+
+                    <!-- Inside text input layout add
+                          an auto complete text view
+                            and make its input type to none-->
+                    <AutoCompleteTextView
+                        android:id="@+id/etmeasire"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:inputType="none"
+                        android:text="gm " />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/addIngredientbutton"
+                    style="@style/mainbutton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:padding="@dimen/_2sdp"
+                    android:text="Add"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textarealayout" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvShowIngredientAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/llIngredientContainer"
+                app:spanCount="2"
+                tools:listitem="@layout/item_ingredient_add" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/addStepLayout"
+                style="@style/materialStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="Step Title"
+                android:textColorHint="@color/black_1"
+                app:boxStrokeWidthFocused="@dimen/_1sdp"
+                app:errorIconTint="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/rvShowIngredientAdd"
+                app:layout_goneMarginEnd="@dimen/_32sdp"
+                app:layout_goneMarginStart="@dimen/_32sdp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etAddStep"
+                    style="@style/edittextlogintitle"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:inputType="textEmailAddress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textarealayout"
+                style="@style/materialStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="true"
+                app:layout_constraintTop_toBottomOf="@+id/addStepLayout"
+                app:layout_goneMarginEnd="@dimen/_32sdp"
+                app:layout_goneMarginStart="@dimen/_32sdp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ettextarea"
+                    style="@style/edittextlogintitle"
+                    android:layout_height="@dimen/_120sdp"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:gravity="start"
+                    android:hint="Enter Your Food Steps"
+                    android:singleLine="false" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addstepbutton"
+                style="@style/mainbutton"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:padding="@dimen/_2sdp"
+                android:text="Add Step"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textarealayout" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvShowAddRecipeStep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/addstepbutton"
+                tools:listitem="@layout/item_add_recipe_steps" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/createRecipeButton"
+        style="@style/mainbutton"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:padding="@dimen/_2sdp"
+        android:text="Create Recipe"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

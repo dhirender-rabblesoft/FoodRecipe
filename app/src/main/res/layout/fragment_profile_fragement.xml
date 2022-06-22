@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragement.ProfileFragement">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/userimage"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:src="@drawable/user_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvusername"
+                style="@style/semibold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ani Avenger"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userimage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvuserlevel"
+                style="@style/medium_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beginner"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvusername" />
+
+
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:id="@+id/createrecipecontainer"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="@dimen/_100sdp"-->
+            <!--                android:layout_margin="@dimen/_10sdp"-->
+            <!--                android:background="@drawable/dotted_background_border"-->
+            <!--                android:padding="@dimen/_10sdp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/tvmyrecipetitle">-->
+
+            <!--                <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                    android:id="@+id/createMyRecipebutton"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:textAlignment="center"-->
+            <!--                    android:drawablePadding="@dimen/_10sdp"-->
+            <!--                    android:drawableTop="@drawable/ic_baseline_add_24"-->
+            <!--                    android:text="Create New Recipe"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/createrecipecontainer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvuserlevel"
+                app:strokeColor="@color/card_black2"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/createMyRecipebutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/ic_baseline_add_24"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:text="Create New Recipe"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvmyrecipetitle"
+                style="@style/semibold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="My Recipe's"
+                android:textSize="@dimen/_16sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createrecipecontainer" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvmyrecipemore"
+                style="@style/semibold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="View All"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/main_color"
+                android:padding="@dimen/_5sdp"
+                android:background="@drawable/rectangle_grey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createrecipecontainer" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTodayPopular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/createrecipecontainer"
+                app:layout_constraintTop_toBottomOf="@+id/tvmyrecipetitle"
+                tools:listitem="@layout/item_my_recipe" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvmytipsTitle"
+                style="@style/semibold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="My Tips"
+                android:textSize="@dimen/_16sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvTodayPopular" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvmytipsviewmore"
+                style="@style/semibold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="View All"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/main_color"
+                android:padding="@dimen/_5sdp"
+                android:background="@drawable/rectangle_grey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvTodayPopular" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMyTips"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/createrecipecontainer"
+                app:layout_constraintTop_toBottomOf="@+id/tvmytipsviewmore"
+                tools:listitem="@layout/item_tips_trick" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPopularrecipe"
+                style="@style/semibold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Popular Recipe's"
+                android:textSize="@dimen/_16sdp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvTodayPopular" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPopularRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPopularrecipe"
+                tools:listitem="@layout/item_popular_recipe" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeScreenFragement">
+
+    <fragment
+        android:id="@+id/homeScreenFragement"
+        android:name="com.app.foodrecipe.fragement.HomeScreenFragment"
+        android:label="fragment_home_screen_fragement"
+        tools:layout="@layout/fragment_home_screen_fragement" />
+    <fragment
+        android:id="@+id/tipsTrickFragement"
+        android:name="com.app.foodrecipe.fragement.TipsTrickFragment"
+        android:label="fragment_tips_trick_fragement"
+        tools:layout="@layout/fragment_tips_trick_fragement" />
+    <fragment
+        android:id="@+id/favouriteFragement"
+        android:name="com.app.foodrecipe.fragement.FavouriteFragement"
+        android:label="fragment_favourite_fragement"
+        tools:layout="@layout/fragment_favourite_fragement" />
+    <fragment
+        android:id="@+id/profileFragement"
+        android:name="com.app.foodrecipe.fragement.ProfileFragement"
+        android:label="fragment_profile_fragement"
+        tools:layout="@layout/fragment_profile_fragement" />
+</navigation>

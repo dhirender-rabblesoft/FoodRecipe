@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeScreenFragement"
+        android:icon="@drawable/home_icon"
+        android:label="Browse"
+        android:title="Browse" />
+    <item
+        android:id="@+id/tipsTrickFragement"
+        android:label="TipsTrick"
+        android:icon="@drawable/ic_baseline_lightbulb_24"
+         android:title="TipsTrick" />
+
+    <item
+        android:id="@+id/createRecipe"
+         android:title="" />
+
+    <item
+        android:id="@+id/favouriteFragement"
+        android:label="Favourite"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="Favourite" />
+    <item
+        android:id="@+id/profileFragement"
+        android:label="Profile"
+        android:icon="@drawable/chef_profile_bottom"
+        android:title="Profile" />
+
+</menu>
