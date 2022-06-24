@@ -26,6 +26,7 @@ object Utils {
 
     }
 
+
     fun shareintent(context: Context, content: String, msg: String = "") {
         val sendIntent = Intent().apply {
             action = Intent.ACTION_SEND
@@ -35,5 +36,6 @@ object Utils {
         val shareIntnet = Intent.createChooser(sendIntent, null)
         context.startActivity(shareIntnet)
     }
+
 
 }

@@ -106,7 +106,7 @@
                             android:layout_height="wrap_content"
                             android:drawableStart="@drawable/ic_baseline_favorite_24"
                             android:drawablePadding="@dimen/_5sdp"
-                            android:text="1K Likes"
+                            android:text="1K"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_12sdp" />
 

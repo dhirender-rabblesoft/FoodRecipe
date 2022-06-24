@@ -1,10 +1,12 @@
 package com.app.foodrecipe.fragement
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView.OnEditorActionListener
 import com.app.foodrecipe.R
 import com.app.foodrecipe.Utils.Keys
 import com.app.foodrecipe.adapter.NewRecipeAdapter
@@ -12,11 +14,11 @@ import com.app.foodrecipe.adapter.PopularRecipeAdapter
 import com.app.foodrecipe.adapter.TodayPopularAdapter
 import com.app.foodrecipe.adapter.TopUserTodayAdapter
 import com.app.foodrecipe.base.KotlinBaseFragment
-import com.app.foodrecipe.dailog.FilterDailog
 import com.app.foodrecipe.databinding.FragmentHomeScreenFragementBinding
 import com.app.foodrecipe.extension.gone
 import com.app.foodrecipe.extension.visible
 import com.app.foodrecipe.screens.CommonActivity
+import com.app.foodrecipe.screens.SearchActivtiy
 import com.app.foodrecipe.screens.TopChefActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.common_toolbar.view.*
@@ -73,6 +75,15 @@ class HomeScreenFragment() : KotlinBaseFragment() {
     }
 
     private fun setClicks() {
+         binding.searchbar.edsearchtext.setOnEditorActionListener(OnEditorActionListener { view, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                val bundle = Bundle()
+                bundle.putString(Keys.SEARCH_KEYWORD,view.text.toString())
+                baselistener.openA(SearchActivtiy::class,bundle)
+                return@OnEditorActionListener true
+            }
+            false
+        })
 
     }
 

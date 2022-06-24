@@ -40,6 +40,17 @@
     <string name="v_validtestfield">Please Enter Your Query In Text Field</string>
     <string name="valid_code">Please Enter Valid OTP</string>
     <string name="valid_review">Please Enter Review</string>
+    <string name="valid_level">Please Select Level</string>
+    <string name="v_recipe_name">Please Enter Recipe Name</string>
+    <string name="v_ingredient_name">Please Enter Ingredient Name</string>
+    <string name="v_quantity">Quantity</string>
+    <string name="v_measure_name">Measurement </string>
+    <string name="v_step_name">Please Enter Step Title </string>
+    <string name="v_step_des">Please Enter Step Description </string>
+    <string name="v_time">Please select time </string>
+    <string name="v_name">Please Enter Name </string>
+    <string name="v_query">Please Enter Your Query </string>
+
 
     <string-array name="chief_level">
         <item>Beginner</item>
@@ -67,9 +78,21 @@
 
 
     <string-array name="ingredient_measure_array">
-        <item>GM</item>
-        <item>SP</item>
+        <item>Gram</item>
+        <item>Spoon</item>
+        <item>Piece</item>
+        <item>Slice</item>
     </string-array>
+
+    //permission
+    <string name="permisionmsgfirst">Core fundamental are based on these permissions</string>
+    <string name="ok">Okay</string>
+    <string name="cancel">Cancel</string>
+    <string name="manualpermission">You need to allow necessary permissions in Settings manually</string>
+    <string name="choose">Choose</string>
+    <string name="nointernet">Internet Connection is not available</string>
+    <string name="somthingwentwrong">Something Went Wrong</string>
+    <string name="v_valid_recipe_img">Please Add Recipe Image</string>
 
 
 </resources>

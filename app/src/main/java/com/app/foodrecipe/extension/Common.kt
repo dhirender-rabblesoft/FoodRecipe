@@ -1,9 +1,14 @@
 package com.app.foodrecipe.extension
 
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import java.io.File
 import java.text.DecimalFormat
 import java.util.regex.Pattern
 
@@ -35,6 +40,27 @@ fun View.gone() {
 fun View.invisible() {
     this.visibility = View.INVISIBLE
 }
+fun <T> T.isNotNull(): Boolean {
+    return this != null
+}
+
+fun getMultiPart(key: String?, file: String?): MultipartBody.Part?
+{
+    return MultipartBody.Part.createFormData(key!!, file!!)
+}
+
+fun getMultiPart(key:String?,file:File):MultipartBody.Part?{
+    val requesetFile = file.asRequestBody("multipart/form-data".toMediaTypeOrNull())
+    return MultipartBody.Part.createFormData(key!!,file.name,requesetFile)
+}
+fun getMultiPart(key: String?, file: Any?): MultipartBody.Part?
+{
+    return MultipartBody.Part.createFormData(key!!, file!!.toString())
+}
+fun Activity.getDecorView(): View {
+    return window.decorView
+}
+
 
 infix fun ViewGroup.inflate(@LayoutRes view: Int): View {
     return LayoutInflater.from(context).inflate(view, this, false)

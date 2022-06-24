@@ -11,6 +11,7 @@ import com.app.foodrecipe.base.KotlinBaseFragment
 import com.app.foodrecipe.databinding.FragmentTipsTrickDetailBinding
 import com.app.foodrecipe.databinding.FragmentTipsTrickFragementBinding
 import com.app.foodrecipe.extension.invisible
+import com.app.foodrecipe.model.TipsTrickModel
 import com.app.foodrecipe.screens.CommonActivity
 
 
@@ -54,11 +55,43 @@ class TipsTrickDetailFragment(val baseActivity: KotlinBaseActivity) : KotlinBase
 //        }
     }
     private fun setTipsTrcikAdapter() {
+      val  listoftips = ArrayList<TipsTrickModel>()
+        listoftips.add(
+            TipsTrickModel(
+                "Reduce Sault In Food",
+                "Potato",
+                "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+                "4.5",
+                5,
+                true
+            )
+        )
+        listoftips.add(
+            TipsTrickModel(
+                "Make Chicken Tasty",
+                "Onion",
+                "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+                "3.5",
+                100,
+                false
+            )
+        )
+        listoftips.add(
+            TipsTrickModel(
+                "Make Food more delicious",
+                "Jeera",
+                "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+                "2.5",
+                2000,
+                false
+            )
+        )
         val tipsTrickAdapter = TipsTicksAdapter() {
 
 
         }
         binding.rvPopluarTipsTrick.adapter = tipsTrickAdapter
+        tipsTrickAdapter.addNewList(listoftips)
 
     }
 

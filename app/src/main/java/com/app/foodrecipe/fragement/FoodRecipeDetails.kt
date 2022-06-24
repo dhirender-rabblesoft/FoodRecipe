@@ -45,7 +45,6 @@ class FoodRecipeDetails(val baseActivity: KotlinBaseActivity) : KotlinBaseFragme
         setAdapter()
         setClick()
         setReviewAdapter()
-
     }
 
     private fun setReviewAdapter() {
@@ -62,7 +61,7 @@ class FoodRecipeDetails(val baseActivity: KotlinBaseActivity) : KotlinBaseFragme
 
             val bundle = Bundle()
             bundle.putString(Keys.FRAGMENT_FROM, Keys.RECIPE_DETAIL_REVIEW.toString())
-            baselistener.openA(CommonActivity::class,bundle)
+            baselistener.openA(CommonActivity::class, bundle)
 
         }
         binding.loginbutton.setOnClickListener {

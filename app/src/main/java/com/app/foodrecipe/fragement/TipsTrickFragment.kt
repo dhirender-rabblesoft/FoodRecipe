@@ -60,8 +60,6 @@ class TipsTrickFragment : KotlinBaseFragment() {
 
 
     private fun searchListner() {
-
-
         binding.searchbar.edsearchtext.addTextChangedListener {
             var keyword = it.toString()
             var templist = ArrayList<TipsTrickModel>()

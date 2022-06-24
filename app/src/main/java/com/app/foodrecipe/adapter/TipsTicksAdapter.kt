@@ -19,7 +19,7 @@ class TipsTicksAdapter(val itemClick: (Int) -> Unit) : BaseAdapter<TipsTrickMode
             tvdescription.setText(list[position].description.toString())
 
             val countlike = prettyCount(list[position].likecount)
-            tvlike.setText(countlike.toString() + " Likes")
+            tvlike.setText(countlike.toString())
 
 
             //favourite and unfavourite

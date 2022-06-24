@@ -108,7 +108,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:inputType="none"
-                    android:text="Choose " />
+                    android:text="@string/choose" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -173,7 +173,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:enabled="true"
-                    android:hint="Ingredient Quantity"
+                    android:hint="Quantity"
                     android:padding="@dimen/_2sdp"
                     app:hintEnabled="true">
                     <!-- Inside text input layout add
@@ -184,8 +184,7 @@
                         style="@style/edittextlogintitle"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Ingredient's " />
+                        android:layout_weight="1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -194,9 +193,10 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_marginStart="@dimen/_3sdp"
                     android:layout_weight="1"
-                    android:hint="Measurement"
-                    android:padding="@dimen/_2sdp"
+                    android:hint="Unit"
                     app:hintEnabled="true"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -211,7 +211,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:inputType="none"
-                        android:text="gm " />
+                        android:text="Gram" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -233,10 +233,7 @@
                 android:id="@+id/rvShowIngredientAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintTop_toBottomOf="@+id/llIngredientContainer"
-                app:spanCount="2"
                 tools:listitem="@layout/item_ingredient_add" />
 
 
